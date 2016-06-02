@@ -1,0 +1,1 @@
+# spring-xd-base-image

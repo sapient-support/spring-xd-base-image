@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER Eric Bottard
+MAINTAINER Amol
 
 # 'snapshot' or 'release'
 ENV XD_BUILD snapshot

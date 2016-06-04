@@ -11,7 +11,7 @@ RUN wget http://repo.spring.io/${XD_BUILD}/org/springframework/xd/spring-xd/${XD
       -O /opt/spring-xd-${XD_VERSION}-dist.zip \
     && unzip /opt/spring-xd-${XD_VERSION}-dist.zip -d /opt/ \
     && rm /opt/spring-xd-${XD_VERSION}-dist.zip \
-    && apt-get update && apt-get install -y rsync \
+    && apt-get update && apt-get install -y rsync build-essential \
     && /opt/spring-xd-${XD_VERSION}/zookeeper/bin/install-zookeeper \
     && /opt/spring-xd-${XD_VERSION}/redis/bin/install-redis \
     && chown -R springxd:springxd /opt/spring-xd-${XD_VERSION} \

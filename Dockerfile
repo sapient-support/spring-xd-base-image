@@ -2,8 +2,8 @@ FROM java:8
 MAINTAINER Amol
 
 # 'snapshot' or 'release'
-ENV XD_BUILD snapshot
-ENV XD_VERSION 1.2.0.BUILD-SNAPSHOT
+ENV XD_BUILD release
+ENV XD_VERSION 1.3.1.RELEASE
 
 RUN groupadd -r springxd && useradd -r -g springxd springxd
 
@@ -18,5 +18,6 @@ RUN wget http://repo.spring.io/${XD_BUILD}/org/springframework/xd/spring-xd/${XD
     && chown -R springxd:springxd /opt/spring-xd-${XD_VERSION} \
     && ln -s /opt/spring-xd-${XD_VERSION} /opt/spring-xd
 
+COPY spring-xd-admin-ui-client-1.3.1.RELEASE.jar /opt/spring-xd/xd/lib/.
 USER springxd
 WORKDIR /opt/spring-xd

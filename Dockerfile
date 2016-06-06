@@ -14,7 +14,7 @@ RUN wget http://repo.spring.io/${XD_BUILD}/org/springframework/xd/spring-xd/${XD
     && apt-get update && apt-get install -y rsync build-essential \
     && /opt/spring-xd-${XD_VERSION}/zookeeper/bin/install-zookeeper \
     && /opt/spring-xd-${XD_VERSION}/redis/bin/install-redis \
-    && apt-get remove -y rsync build-essential \
+    && apt-get autoremove -y rsync build-essential \
     && chown -R springxd:springxd /opt/spring-xd-${XD_VERSION} \
     && ln -s /opt/spring-xd-${XD_VERSION} /opt/spring-xd
 

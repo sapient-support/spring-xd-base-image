@@ -14,9 +14,10 @@ RUN wget https://github.com/sapient-support/spring-xd/releases/download/newVersi
     && apt-get update && apt-get install -y rsync \
     && /opt/spring-xd-${XD_VERSION}/zookeeper/bin/install-zookeeper \
     && apt-get autoremove -y rsync \
-    && chown -R springxd:springxd /opt/spring-xd-${XD_VERSION} \
     && ln -s /opt/spring-xd-${XD_VERSION} /opt/spring-xd
 
 COPY spring-xd-admin-ui-client-1.3.1.RELEASE.jar /opt/spring-xd/xd/lib/.
+RUN chown -R springxd:springxd /opt/spring-xd-${XD_VERSION}
+
 USER springxd
 WORKDIR /opt/spring-xd
